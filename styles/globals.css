@@ -60,3 +60,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* Apply left and right margins for the main container */
+.container {
+  max-width: 1200px; /* Adjust this value as needed */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px; /* Add a bit of padding on the sides */
+  padding-right: 20px;
+}

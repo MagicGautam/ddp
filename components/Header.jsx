@@ -1,42 +1,37 @@
-import React, {useState, useEffect, useContext} from 'react'
-
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-
 import { getCategories } from '@/services';
+import moment from 'moment'; 
 
 const Header = () => {
-  
-    const[categories,setCategories] = useState([]);
-      
-        useEffect(() => {
-            getCategories()
-                .then((result) => setCategories(result));
-            }, []);
-      
-    return (
-    <div className="container mx-auto px-10 mb-8">
-        <div className="boarder-b w-full inline-block border-blue-400 py-8">
-            <div className="md:float-left block">
-                <Link href="/">
-                    <span className="cursor-pointer font-bold text-4xl text-white">
-                    दैनिक दतिया प्रकाश
-                    </span>
-                </Link>
-            </div>
-            <div className="hidden md:float-left md:contents">
-                {categories.map((category)=>(
-                    <Link key={category.slug} href={`/category/${category.slug}`}>
-                        <span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
-                            {category.name}
-                        </span>
-                    </Link>
-                ))
-            }
-            </div>
-        </div>
-      
-    </div>
-  )
-}
+  const [categories, setCategories] = useState([]);
+  const currentDate = moment().format('dddd, MMMM Do YYYY'); 
+  useEffect(() => {
+    getCategories().then((result) => setCategories(result));
+  }, []);
 
-export default Header
+  return (
+    <div className="bg-white-500 py-4 text-white text-center">
+      <div className="container mx-auto px-10">
+      <div className="flex justify-left text-black text-sm font-bold">{currentDate}</div>
+        <div className="flex justify-center items-center">
+          <Link href="/" className="cursor-pointer font-bold text-4xl mb-2">
+             <img src="/logo.png" alt="Logo" className="w-250 h-20"/>
+          </Link>
+        </div>
+        <div className="border-gray-300 border-b h-0 w-full mt-1 mb-1"></div>
+            <div className="hidden md:flex ml-10 space-x-4">
+                {categories.map((category) => (
+                <Link key={category.slug} href={`/category/${category.slug}`} className="text-black font-semibold cursor-pointer hover:underline">
+                    {category.name}
+                </Link>
+                ))}
+            </div>
+            <div className="border-gray-300 border-b h-0 w-full mt-1 mb-1"></div>
+            <div className="border-gray-300 border-b h-0 w-full mt-1 mb-1"></div>
+      </div>
+    </div>
+  );
+};
+
+export default Header;
