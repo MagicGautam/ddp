@@ -35,8 +35,9 @@ const Header = () => {
                 </Link>
                 ))}
             </div>
-            <div className="border-gray-300 border-b h-0 w-full mt-1 mb-1"></div>
-            <div className="border-gray-300 border-b h-0 w-full mt-1 mb-1"></div>
+            <div className="hidden lg:block border-gray-300 border-b h-0 w-full mt-1 mb-1"></div>
+            <div className="hidden lg:block border-gray-300 border-b h-0 w-full mt-1 mb-1"></div>
+
       </div>
     </div>
   );
