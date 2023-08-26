@@ -2,6 +2,9 @@
 
 Dainik Datia Prakash is a newspaper with a rich history, being published since 1973. This project aims to establish an online presence for DDP, enabling editors to share featured articles and literature seamlessly on the internet.
 
+![image](https://github.com/MagicGautam/ddp/assets/55827021/157b75b6-9e53-461d-a006-46aab5101c65)
+
+
 ## Features
 
 - Write, submit, and deploy articles conveniently using the integrated Content Management System (CMS) powered by HyGraph.
@@ -12,7 +15,7 @@ Dainik Datia Prakash is a newspaper with a rich history, being published since 1
 
 ## Demo
 
-Check out the live demo of the DDP project at [[www.example.com](https://dainikdatiaprakash.vercel.app/)](https://dainikdatiaprakash.vercel.app/).
+Check out the live demo of the DDP project at [(https://dainikdatiaprakash.vercel.app/)](https://dainikdatiaprakash.vercel.app/).
 
 ## Phase 1
 
