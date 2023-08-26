@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getCategories } from '@/services';
 import moment from 'moment'; 
+import Image from 'next/image';
+
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -16,7 +18,13 @@ const Header = () => {
       <div className="flex justify-left text-black text-sm font-bold">{currentDate}</div>
         <div className="flex justify-center items-center">
           <Link href="/" className="cursor-pointer font-bold text-4xl mb-2">
-             <img src="/logo.png" alt="Logo" className="w-250 h-20"/>
+             <Image
+             unoptimized 
+             src="/logo.png" 
+             alt="Logo" 
+             height={20}
+             width={250}
+          />
           </Link>
         </div>
         <div className="border-gray-300 border-b h-0 w-full mt-1 mb-1"></div>

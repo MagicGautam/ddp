@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import moment from 'moment';
 import Link from 'next/link';
 import {getPosts} from '../services';
-
+import Image from 'next/image';
 function PostCard() {
 
   const[posts,setposts] = useState([]);
@@ -20,7 +20,7 @@ function PostCard() {
 
   return (
     <div>{sortedPosts.map((post) => (
-        <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+        <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8" key={post.node.id}>
           <div className="relative overflow-hidden shadow-md pb-80 mb-6">
           <img 
               src={post.node.featuredImage.url}
